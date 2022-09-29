@@ -1,33 +1,29 @@
 #include <stdio.h>
 void Union(int *set3, int *set1, int *set2, int *s1, int *s2, int *s3)
 {
-    int i, j, k = 0;
+    int i, j,k =0;
     for (i = 0; i < *s1; i++)
     {
-        set3[i] = set1[i];
-    }
-    *s3 = i;
-    for (i = 0; i < *s2; i++)
-    {
-        for (j = 0; j < *s1; j++)
+        for (j = 0; j < *s2; j++)
         {
-            if (set2[i] == set3[j])
+            if (set1[i] == set2[j])
                 break;
         }
-        if (j == *s1)
+        if (j == *s2)
         {
-            set3[*s1 + k] = set2[i];
+            set3[k] = set1[i];
             k++;
-            *s3 += 1;
         }
         else
             continue;
     }
+    *s3 = k;
+       
 }
 
 void display(int *U, int size)
 {
-    printf("After union : ");
+    printf("After difference : ");
     for (int i = 0; i < size; i++)
     {
         /**/

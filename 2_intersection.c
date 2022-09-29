@@ -24,7 +24,7 @@ void display(int *U, int size)
     for (int i = 0; i < size; i++)
     {
         /**/
-        printf("\t%d",U[i]);
+        printf("%d\t",U[i]);
     }
 }
 

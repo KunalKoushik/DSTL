@@ -1,33 +1,53 @@
 #include <stdio.h>
-void Difference(int *set3, int *set1, int *set2, int *s1, int *s2, int *s3)
+
+void Sdiff(int *set3, int *set1, int *set2, int *s1, int *s2, int *s3)
 {
-    int i, j,k =0;
+    int i, j, k = 0;
     for (i = 0; i < *s1; i++)
     {
         for (j = 0; j < *s2; j++)
         {
             if (set1[i] == set2[j])
+            {
                 break;
+            }
         }
         if (j == *s2)
         {
             set3[k] = set1[i];
             k++;
         }
-        else
-            continue;
+    }
+    for (i = 0; i < *s2; i++)
+    {
+        for (j = 0; j < *s1; j++)
+        {
+            if (set2[i] == set1[j])
+            {
+                break;
+            }
+        }
+        if (j == *s1)
+        {
+            set3[k] = set2[i];
+            k++;
+        }
     }
     *s3 = k;
-       
 }
 
-void display(int *U, int size)
+void display(int U[], int size)
 {
-    printf("After difference : ");
+    printf("After Symmetric difference : ");
     for (int i = 0; i < size; i++)
     {
-        /**/
-        printf("%d\t",U[i]);
+        if (i == size-1)
+        {
+            printf("%d",U[i]);
+            
+        }
+        else
+            printf("%d,",U[i]);
     }
 }
 int main()
@@ -51,7 +71,7 @@ int main()
         scanf("%d", &set2[i]);
     }
 
-    Difference(set3, set1, set2, &s1, &s2, &s3);
+    Sdiff(set3, set1, set2, &s1, &s2, &s3);
 
     display(set3, s3);
 

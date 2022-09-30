@@ -19,11 +19,18 @@ void Intersection(int *set3, int *set1, int *set2, int *s1, int *s2, int *s3)
 
 void display(int *U, int size)
 {
-    printf("After Intersection : ");
+    printf("After Intersection : \n{");
     for (int i = 0; i < size; i++)
     {
-        printf("%d\t",U[i]);
+        if (i == size-1)
+        {
+            printf("%d",U[i]);
+            
+        }
+        else
+            printf("%d,",U[i]);
     }
+    printf("}");
 }
 
 int main()

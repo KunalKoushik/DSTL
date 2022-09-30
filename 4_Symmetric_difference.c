@@ -38,7 +38,7 @@ void Sdiff(int *set3, int *set1, int *set2, int *s1, int *s2, int *s3)
 
 void display(int U[], int size)
 {
-    printf("After Symmetric difference : ");
+    printf("After Symmetric difference :\n{");
     for (int i = 0; i < size; i++)
     {
         if (i == size-1)
@@ -49,6 +49,7 @@ void display(int U[], int size)
         else
             printf("%d,",U[i]);
     }
+    printf("}");
 }
 int main()
 {

@@ -10,7 +10,6 @@ void Intersection(int *set3, int *set1, int *set2, int *s1, int *s2, int *s3)
             {
                 set3[k] = set2[i];
                 k++;
-                //*s3 += 1;
                 break;
             }
         }
@@ -23,7 +22,6 @@ void display(int *U, int size)
     printf("After Intersection : ");
     for (int i = 0; i < size; i++)
     {
-        /**/
         printf("%d\t",U[i]);
     }
 }

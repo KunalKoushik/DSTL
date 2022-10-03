@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main()
 {
     int a, b, temp;
@@ -13,6 +12,6 @@ int main()
         b = temp % 2;
         printf("\n\t%d\t%d\t%d\t%d\t%d\n", b, a, a && b, a || b, !b);
     }
-
+    
     return 0;
 }

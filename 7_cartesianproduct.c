@@ -8,19 +8,18 @@ void findcart(int set1[], int set2[], int s1, int s2)
         {
             if ((i == s1 - 1) && (j == s2 - 1))
             {
-                printf("{%d,%d}", set1[i], set2[j]);
+                printf("{%d,%d}}", set1[i], set2[j]);
             }
             else
                 printf("{%d,%d},", set1[i], set2[j]);
         }
     }
-    printf("}");
 }
 
 int main()
 {
     int s1, s2;
-    int set1[100000], set2[100000], set3[100000];
+    int set1[100], set2[100], set3[100];
 
     printf("Enter size of set 1 : ");
     scanf("%d", &s1);

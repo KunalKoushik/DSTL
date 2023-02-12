@@ -7,7 +7,7 @@ int main()
 		printf("Enter elements of set = ");
 		scanf("%d",&set[i]);
 	}
-	printf("{Fie");
+	printf("\n{Fie");
 	for(i=0;i<4;i++)
 	{	
 	printf(",{%d}",set[i]);

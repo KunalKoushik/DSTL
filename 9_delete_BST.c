@@ -76,7 +76,12 @@ int main()
 
     struct node *root = NULL;
     struct node *p = getnode(5);
-    struct node *p1 = getnode(3);
+    struct node *p1 = getnode(3);// Finally The tree looks like this:
+    //      5
+    //     / \
+    //    3   6
+    //   / \
+    //  1   4
     struct node *p2 = getnode(6);
     struct node *p3 = getnode(1);
     struct node *p4 = getnode(4);

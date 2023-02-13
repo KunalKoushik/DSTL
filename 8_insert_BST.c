@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<malloc.h>
+#include <malloc.h>
 #include <stdlib.h>
 
 struct node
@@ -26,7 +26,7 @@ void inorder(struct node *root)
         inorder(root->left);
 
         // Traverse root
-        
+
         printf("%d -> ", root->info);
         // Traverse right
         inorder(root->right);

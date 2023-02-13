@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<malloc.h>
 #include <stdlib.h>
 
 struct node
@@ -25,49 +26,42 @@ void inorder(struct node *root)
         inorder(root->left);
 
         // Traverse root
-        if ((root->left == NULL) && (root->right == NULL))
-        {
-            printf("%d", root->info);
-        }
-        else
-        {
-            printf("%d -> ", root->info);
-        }
-
+        
+        printf("%d -> ", root->info);
         // Traverse right
         inorder(root->right);
     }
 }
 
 // Insert a node
-struct node *insert(struct node **node, int info)
+struct node *insert(struct node *node, int info)
 {
-    struct node *p = *node;
     // Return a new node if the tree is empty
-    if (p == NULL)
+    if (node == NULL)
         return getnode(info);
 
     // Traverse and insert the node
-    if (info < p->info)
-        p->left = insert(&p->left, info);
+    if (info < node->info)
+        node->left = insert(node->left, info);
     else
-        p->right = insert(&p->right, info);
+        node->right = insert(node->right, info);
 
-    return *node;
+    return node;
 }
 
 int main()
 {
     struct node *root = NULL;
     root = insert(root, 8);
-    root = insert(root, 3);
-    root = insert(root, 1);
-    root = insert(root, 6);
-    root = insert(root, 7);
-    root = insert(root, 10);
-    root = insert(root, 14);
-    root = insert(root, 4);
+    insert(root, 3);
+    insert(root, 1);
+    insert(root, 6);
+    insert(root, 7);
+    insert(root, 10);
+    insert(root, 14);
+    insert(root, 4);
 
     printf("Inorder traversal: ");
     inorder(root);
+    return 0;
 }
